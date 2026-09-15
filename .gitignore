@@ -30,3 +30,18 @@ compile_commands.json
 
 .vscode/
 **/.DS_Store
+# Local traces and duplicate submission files
+/traces/
+/Hawkeye_submission.zip
+/hawkeye_submission/
+
+# Standalone test executables
+/optgen_test
+/hawkeye_predictor_test
+/hawkeye_rrip_test
+
+# Temporary editor files
+*.save
+*.swp
+*~
+*:Zone.Identifier
