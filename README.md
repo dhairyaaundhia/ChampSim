@@ -1,3 +1,64 @@
+# Assignment 1: Hawkeye Cache Replacement Policy
+
+**Name:** Dhairya Aundhia
+
+**SR No.:** 29024
+
+This assignment implements Hawkeye in ChampSim and compares its LLC
+miss rate with LRU.
+
+## Implementation
+
+The source files are in replacement/hawkeye/:
+
+- optgen.h / optgen.cc: per-set occupancy history and OPT decisions.
+- predictor.h / predictor.cc: PC-indexed saturating counters.
+- rrip.h / rrip.cc: insertion, aging and victim selection.
+- hawkeye.h / hawkeye.cc: integration with ChampSim.
+
+The required standalone test drivers are in hawkeye_tests/.
+Their input vectors are intentionally empty for grading.
+
+## Build and run
+
+After completing the original ChampSim dependency setup below:
+
+    ./config.sh hawkeye_config.json
+    make -j2
+
+Example run with a locally downloaded trace:
+
+    bin/champsim --warmup-instructions 20000000 --simulation-instructions 50000000 traces/456.hmmer-191B.champsimtrace.xz
+
+Reconfigure and rebuild whenever the replacement policy or cache settings change.
+
+## Experiments
+
+All runs use 20M warmup instructions, 50M simulation instructions,
+and 64-byte cache lines.
+
+For hmmer, both policies are compared at a fixed 2 MiB LLC capacity:
+
+| Ways | Sets |
+|---:|---:|
+| 4 | 8192 |
+| 8 | 4096 |
+| 16 | 2048 |
+
+The second experiment compares LRU and Hawkeye at 16 ways and 2048 sets
+on 456.hmmer-191B, 429.mcf-22B and 473.astar-42B.
+
+## Report
+
+The PDF report is submitted separately and contains three learnings
+and observations, both plots, and the experimental discussion.
+
+Figures are in plots/. Simulation logs, traces and binaries stay local.
+
+---
+
+# Original ChampSim documentation
+
 # ChampSim
 
 ![GitHub](https://img.shields.io/github/license/ChampSim/ChampSim)

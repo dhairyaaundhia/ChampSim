@@ -56,3 +56,6 @@ compile_commands.json
 /lru_8way.json
 /lru_astar.json
 /lru_mcf.json
+
+# Local simulation results
+/results/
