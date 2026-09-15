@@ -45,3 +45,14 @@ compile_commands.json
 *.swp
 *~
 *:Zone.Identifier
+# Local experiment configurations
+/hawkeye_16way.json
+/hawkeye_4way.json
+/hawkeye_8way.json
+/hawkeye_astar.json
+/hawkeye_mcf.json
+/lru_16way.json
+/lru_4way.json
+/lru_8way.json
+/lru_astar.json
+/lru_mcf.json
